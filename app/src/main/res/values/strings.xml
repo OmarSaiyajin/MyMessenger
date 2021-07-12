@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Messenger</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="chats">Chat</string>
+    <string name="favorites">Favorites</string>
+    <string name="settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
+    <string name="example">Example</string>
+</resources>
