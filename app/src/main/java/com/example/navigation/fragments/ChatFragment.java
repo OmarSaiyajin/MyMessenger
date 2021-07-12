@@ -52,14 +52,24 @@ public class ChatFragment extends Fragment {
         laura.setId(2);
         laura.setName("Laura");
 
+        User lisa = new User();
+        laura.setId(3);
+        laura.setName("Lisa");
+
+        User lana = new User();
+        laura.setId(4);
+        laura.setName("Lana");
+
         ChatService chatService = new ChatService();
         List<User> users = new ArrayList<>();
         users.add(martin);
         users.add(laura);
+        users.add(lisa);
+        users.add(lana);
 
         chatService.createNewChat(users, "Chat mit Laura");
         List<Chat> myChats = chatService.getAllChatsForUser(martin);
-        chatService.sendChatMessage(myChats.get(0).getId(), new Message("Hallo", martin));
+        chatService.sendChatMessage(myChats.get(0).getId(), new Message("Hallo", martin, true));
 
         itemExamples.add((new ItemExample(R.drawable.ic_android, myChats.get(0).getName(), myChats.get(0).getMessages().get(0).getMessage())));
         itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Line 3", "Line 4"));
