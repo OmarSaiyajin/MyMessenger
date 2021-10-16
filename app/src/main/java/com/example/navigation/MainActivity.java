@@ -29,30 +29,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-/*
-        ImageButton en = findViewById(R.id.btn_en);
-        ImageButton de = findViewById(R.id.btn_de);
-        LanguageManager languageManager = new LanguageManager(this);
-        en.setOnClickListener(view -> {
-            languageManager.updateResource("en");
-            recreate();
-        });
-        de.setOnClickListener(view -> {
-            languageManager.updateResource("de");
-        });
-*/
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -83,12 +65,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.ic_settings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingFragment()).commit();
-                break;
-            case R.id.nav_share:
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_send:
-                Toast.makeText(this, "Send", Toast.LENGTH_SHORT).show();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

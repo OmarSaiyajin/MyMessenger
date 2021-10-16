@@ -19,15 +19,4 @@
             android:title="@string/settings"/>
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item android:id="@+id/nav_share"
-                android:icon="@drawable/ic_share"
-                android:title="@string/share"/>
-            <item android:id="@+id/nav_send"
-                android:icon="@drawable/ic_send"
-                android:title="@string/send"/>
-        </menu>
-    </item>
-
 </menu>

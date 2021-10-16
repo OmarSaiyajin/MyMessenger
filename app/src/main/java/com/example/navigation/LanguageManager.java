@@ -15,16 +15,12 @@ public class LanguageManager {
         this.ct = ct;
     }
 
-    public void updateResource(String code){
-        Locale locale = new Locale(code);
+    public void updateResource(String language){
+        Locale locale = new Locale(language);
         Locale.setDefault(locale);
         Resources resources = ct.getResources();
         Configuration configuration = resources.getConfiguration();
-        if(Build.VERSION.SDK_INT >= 17) {
-            configuration.setLocale(locale);
-        }else {
-            configuration.locale = locale;
-        }
+        configuration.setLocale(locale);
         resources.updateConfiguration(configuration, resources.getDisplayMetrics());
     }
 }

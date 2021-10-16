@@ -44,36 +44,56 @@ public class ChatFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-        User martin = new User();
-        martin.setId(1);
-        martin.setName("Martin");
+//        User martin = new User();
+//        martin.setId(1);
+//        martin.setName("Martin");
 
-        User laura = new User();
-        laura.setId(2);
-        laura.setName("Laura");
+//        User laura = new User();
+//        laura.setId(2);
+//        laura.setName("Laura");
 
-        User lisa = new User();
-        laura.setId(3);
-        laura.setName("Lisa");
+//        User lisa = new User();
+//        laura.setId(3);
+//        laura.setName("Lisa");
+//
+//        User lana = new User();
+//        laura.setId(4);
+//        laura.setName("Lana");
 
-        User lana = new User();
-        laura.setId(4);
-        laura.setName("Lana");
+//        ChatService chatService = new ChatService();
+//        List<User> users = new ArrayList<>();
+//        users.add(martin);
+//        users.add(laura);
+//        users.add(lisa);
+//        users.add(lana);
+//
+//
+//
+//
+//       // chatService.createNewChat(users, "Chat mit Laura");
+//        chatService.createNewChat(users, "Chat "+ getString(R.string.with) + " " + users.get(0).getName());
+//       // chatService.createNewChat(users, "Chat "+ R.string.with + " " + users.get(1).getName());
+//       // chatService.createNewChat(users, "Chat "+ R.string.with + " " + users.get(2).getName());
+//      //  chatService.createNewChat(users, "Chat "+ R.string.with + " " + users.get(3).getName());
+//        List<Chat> myChats = chatService.getAllChatsForUser(martin);
+//        chatService.sendChatMessage(myChats.get(0).getId(), new Message("Hallo", martin, true));
+//        chatService.sendChatMessage(myChats.get(0).getId(), new Message("Was", martin, true));
 
-        ChatService chatService = new ChatService();
-        List<User> users = new ArrayList<>();
-        users.add(martin);
-        users.add(laura);
-        users.add(lisa);
-        users.add(lana);
-
-        chatService.createNewChat(users, "Chat mit Laura");
-        List<Chat> myChats = chatService.getAllChatsForUser(martin);
-        chatService.sendChatMessage(myChats.get(0).getId(), new Message("Hallo", martin, true));
-
-        itemExamples.add((new ItemExample(R.drawable.ic_android, myChats.get(0).getName(), myChats.get(0).getMessages().get(0).getMessage())));
-        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Line 3", "Line 4"));
-        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Line 5", "Line 6"));
+        itemExamples.add(new ItemExample(R.drawable.ic_android, "Chat " + getString(R.string.with) + " Cristiano","Hey"));
+        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Max", "Was geht?"));
+        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Robin", "wow..."));
+        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Lucy", "Ich verstehe nichts."));
+        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Anna", "Ruf mich an"));
+        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Chris", "Hallo???"));
+        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Justin", "Warum antwortest du nicht mehr?"));
+        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Thomas", "Too."));
+        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Alex", ":)"));
+        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Flo", "ok"));
+        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Ralf", "Whats's up Homeboy?"));
+        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Barbara", "Ciao"));
+        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Laura", "Ruf mich nicht mehr an"));
+        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Samuel", "Alles klar"));
+        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Jenny", "!"));
 
         return rootview;
     }

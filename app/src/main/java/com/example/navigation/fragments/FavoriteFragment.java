@@ -33,7 +33,7 @@ public class FavoriteFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootview =  inflater.inflate(R.layout.fragment_favorite, container, false);
+        View rootview = inflater.inflate(R.layout.fragment_favorite, container, false);
 
         ArrayList<ItemExample> itemExamples = new ArrayList<>();
 
@@ -59,7 +59,7 @@ public class FavoriteFragment extends Fragment {
         users.add(laura);
 
 
-        chatService.createNewChat(users, "Chat mit Laura");
+        chatService.createNewChat(users, "Chat " + getString(R.string.with) + " Laura");
         List<Chat> myChats = chatService.getAllChatsForUser(martin);
         chatService.sendChatMessage(myChats.get(0).getId(), new Message("Hallo", martin, true));
 
