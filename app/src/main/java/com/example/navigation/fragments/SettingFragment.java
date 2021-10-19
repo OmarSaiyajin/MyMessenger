@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment;
 import com.example.navigation.LanguageManager;
 import com.example.navigation.R;
 
-public class SettingFragment extends Fragment{
+public class SettingFragment extends Fragment {
 
     @Nullable
 

@@ -12,16 +12,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.navigation.AdapterExample;
-import com.example.navigation.ItemExample;
+import com.example.navigation.Adapter;
+import com.example.navigation.Items;
 import com.example.navigation.R;
-import com.example.navigation.server.Chat;
-import com.example.navigation.server.Message;
-import com.example.navigation.server.User;
-import com.example.navigation.services.ChatService;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ChatFragment extends Fragment {
 
@@ -35,12 +30,12 @@ public class ChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootview =  inflater.inflate(R.layout.fragment_chat, container, false);
 
-        ArrayList<ItemExample> itemExamples = new ArrayList<>();
+        ArrayList<Items> items = new ArrayList<>();
 
         recyclerView = rootview.findViewById(R.id.recylerview);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this.getActivity());
-        adapter = new AdapterExample(itemExamples);
+        adapter = new Adapter(items);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
@@ -79,21 +74,21 @@ public class ChatFragment extends Fragment {
 //        chatService.sendChatMessage(myChats.get(0).getId(), new Message("Hallo", martin, true));
 //        chatService.sendChatMessage(myChats.get(0).getId(), new Message("Was", martin, true));
 
-        itemExamples.add(new ItemExample(R.drawable.ic_android, "Chat " + getString(R.string.with) + " Cristiano","Hey"));
-        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Max", "Was geht?"));
-        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Robin", "wow..."));
-        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Lucy", "Ich verstehe nichts."));
-        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Anna", "Ruf mich an"));
-        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Chris", "Hallo???"));
-        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Justin", "Warum antwortest du nicht mehr?"));
-        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Thomas", "Too."));
-        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Alex", ":)"));
-        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Flo", "ok"));
-        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Ralf", "Whats's up Homeboy?"));
-        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Barbara", "Ciao"));
-        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Laura", "Ruf mich nicht mehr an"));
-        itemExamples.add(new ItemExample(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Samuel", "Alles klar"));
-        itemExamples.add(new ItemExample(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Jenny", "!"));
+        items.add(new Items(R.drawable.ic_android, "Chat " + getString(R.string.with) + " Cristiano","Hey"));
+        items.add(new Items(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Max", "Was geht?"));
+        items.add(new Items(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Robin", "wow..."));
+        items.add(new Items(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Lucy", "Ich verstehe nichts."));
+        items.add(new Items(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Anna", "Ruf mich an"));
+        items.add(new Items(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Chris", "Hallo???"));
+        items.add(new Items(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Justin", "Warum antwortest du nicht mehr?"));
+        items.add(new Items(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Thomas", "Too."));
+        items.add(new Items(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Alex", ":)"));
+        items.add(new Items(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Flo", "ok"));
+        items.add(new Items(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Ralf", "Whats's up Homeboy?"));
+        items.add(new Items(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Barbara", "Ciao"));
+        items.add(new Items(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Laura", "Ruf mich nicht mehr an"));
+        items.add(new Items(R.drawable.ic_accessible, "Chat " + getString(R.string.with) + " Samuel", "Alles klar"));
+        items.add(new Items(R.drawable.ic_child_care, "Chat " + getString(R.string.with) + " Jenny", "!"));
 
         return rootview;
     }

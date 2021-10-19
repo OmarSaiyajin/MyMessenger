@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ViewHolderExample> {
-    private ArrayList<ItemExample> itemExamples;
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderExample> {
+    private ArrayList<Items> items;
 
     public static class ViewHolderExample extends RecyclerView.ViewHolder{
         public ImageView mImageView;
@@ -26,8 +26,8 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ViewHold
         }
     }
 
-    public AdapterExample(ArrayList<ItemExample> exampleList){
-        itemExamples = exampleList;
+    public Adapter(ArrayList<Items> exampleList){
+        items = exampleList;
     }
 
     @Override
@@ -39,17 +39,17 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolderExample holder, int position) {
-        ItemExample currentItem = itemExamples.get(position);
+        Items currentItem = items.get(position);
 
-        holder.mImageView.setImageResource(currentItem.getmImageResource());
-        holder.mTextView1.setText(currentItem.getmText1());
-        holder.mTextView2.setText(currentItem.getmText2());
+        holder.mImageView.setImageResource(currentItem.getImageRes());
+        holder.mTextView1.setText(currentItem.getChatName());
+        holder.mTextView2.setText(currentItem.getMessage());
 
     }
 
     @Override
     public int getItemCount() {
-        return itemExamples.size();
+        return items.size();
     }
 
 

@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.navigation.AdapterExample;
-import com.example.navigation.ItemExample;
+import com.example.navigation.Adapter;
+import com.example.navigation.Items;
 import com.example.navigation.R;
 import com.example.navigation.server.Chat;
 import com.example.navigation.server.Message;
@@ -35,12 +35,12 @@ public class FavoriteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.fragment_favorite, container, false);
 
-        ArrayList<ItemExample> itemExamples = new ArrayList<>();
+        ArrayList<Items> items = new ArrayList<>();
 
         recyclerView = rootview.findViewById(R.id.recylerview);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this.getActivity());
-        adapter = new AdapterExample(itemExamples);
+        adapter = new Adapter(items);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
@@ -63,7 +63,7 @@ public class FavoriteFragment extends Fragment {
         List<Chat> myChats = chatService.getAllChatsForUser(martin);
         chatService.sendChatMessage(myChats.get(0).getId(), new Message("Hallo", martin, true));
 
-        itemExamples.add((new ItemExample(R.drawable.ic_android, myChats.get(0).getName(), myChats.get(0).getMessages().get(0).getMessage())));
+        items.add((new Items(R.drawable.ic_android, myChats.get(0).getName(), myChats.get(0).getMessages().get(0).getMessage())));
         return rootview;
     }
 }
